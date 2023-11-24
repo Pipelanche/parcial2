@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="container-fluid">
+    <div class="row align-items-center" id="top-p"> 
+        <div class="col-sm-1 d-flex align-items-center" id="sub-top-p">
+            <img src="./assets/logo.png" id="logo-img" class="align-middle"> 
+        </div>
+        <div class="col-md-6 pl-0">
+            <h1 class="align-middle">Restaurantes Internacionales</h1> 
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">País</th>
+          <th scope="col">Tipo de Comida</th>
+          <th scope="col">Fundación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let restaurante of restaurantes">
+          <th scope="row">{{ restaurante.id }}</th>
+          <td (click)="onSelected(restaurante)">{{ restaurante.name }}</td>
+          <td>{{ restaurante.country }}</td>
+          <td>{{ restaurante.cuisine }}</td>
+          <td>{{ restaurante.opening_year }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>El restaurante con mejor puntuación es <strong>{{ hrRestaurant }}</strong> y tiene <strong>{{ bestRating }}</strong> puntos.</p>
+
+  <div class="col-6" *ngIf="selected">
+    <app-restaurante-detail [restauranteDetail]="selectedRestaurante"></app-restaurante-detail>
+  </div>
+</div>
