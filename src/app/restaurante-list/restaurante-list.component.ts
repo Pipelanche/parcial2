@@ -10,7 +10,7 @@ import { Restaurante } from '../restaurante/restaurante';
 export class RestauranteListComponent implements OnInit {
 
   restaurantes: Array<Restaurante> = [];
-  hrRestaurant!: Restaurante;
+  hrRestaurant!: string;
   bestRating: number = 0.0;
   selected: boolean = false;
   selectedRestaurante!: Restaurante;
@@ -23,7 +23,7 @@ export class RestauranteListComponent implements OnInit {
       this.restaurantes.forEach((restaurante) => {
         if (restaurante.rating > this.bestRating) {
           this.bestRating = restaurante.rating;
-          this.hrRestaurant = restaurante;
+          this.hrRestaurant = restaurante.name;
         }
       });
   });

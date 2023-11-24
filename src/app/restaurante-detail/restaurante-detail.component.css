@@ -4,6 +4,7 @@
     margin-top: 20px; 
     padding: 20px; 
     border-radius: 4px; 
+    text-align: center;
 }
 
 .card img {
@@ -28,4 +29,13 @@ p {
     padding: 5px; 
     margin-top: 20px; 
     border-radius: 4px;
+}
+
+h6 {
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+
+h6 p {
+    color: #36cc3e;
 }
